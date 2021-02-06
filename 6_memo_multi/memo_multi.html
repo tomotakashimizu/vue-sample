@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="memo_multi.css" />
+    <title>メモ（複数）</title>
+  </head>
+  <body>
+    <div id="app" class="lists">
+      <div class="list" v-for="(list, listIndex) in lists">
+        <div>
+          <input type="text" v-model="list.inputValue" />
+          <button v-on:click="saveMemo(listIndex)">保存</button>
+        </div>
+        <ul>
+          <li v-for="(memo, memoIndex) in list.memos">
+            {{ memo }}
+            <button v-on:click="deleteMemo(listIndex, memoIndex)">削除</button>
+          </li>
+        </ul>
+        <div>
+          <button v-on:click="deleteList(listIndex)">リストを削除</button>
+        </div>
+      </div>
+      <div class="list">
+        <button v-on:click="addList">＋リストを追加</button>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="memo_multi.js"></script>
+  </body>
+</html>

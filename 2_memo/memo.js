@@ -5,8 +5,9 @@ new Vue({
     memos: [],
   },
   methods: {
-    save: function () {
+    saveMemo: function () {
       this.memos.push(this.inputValue)
+      this.inputValue = ""
     },
   },
 })

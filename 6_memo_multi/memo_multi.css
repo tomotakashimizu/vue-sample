@@ -1,0 +1,7 @@
+.lists {
+  display: flex;
+  overflow: scroll;
+}
+.list {
+  min-width: 250px;
+}

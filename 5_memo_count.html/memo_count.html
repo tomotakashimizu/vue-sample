@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>メモ</title>
+    <title>メモ（カウント）</title>
   </head>
   <body>
     <div id="app">
@@ -12,10 +12,14 @@
         <button v-on:click="saveMemo">保存</button>
       </div>
       <ul>
-        <li v-for="memo in memos">{{ memo }}</li>
+        <li v-for="(memo, index) in memos">
+          {{ memo }}
+          <button v-on:click="deleteMemo(index)">削除</button>
+        </li>
       </ul>
+      <div>全 {{ memoCount }} 件のメモ</div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    <script src="memo.js"></script>
+    <script src="memo_count.js"></script>
   </body>
 </html>

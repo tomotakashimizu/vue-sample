@@ -10,8 +10,13 @@ new Vue({
       localStorage.memos = JSON.stringify(this.memos)
       this.inputValue = ""
     },
+    deleteMemo: function (index) {
+      this.memos.splice(index, 1)
+      localStorage.memos = JSON.stringify(this.memos)
+    },
   },
-  created() {
+  // Vue インスタンスが作られるときに実行される関数 created
+  created: function () {
     this.memos = JSON.parse(localStorage.memos)
   },
 })
