@@ -12,10 +12,7 @@ new Vue({
   },
   methods: {
     saveMemo: function (listIndex) {
-      this.lists[listIndex].memos = [
-        ...this.lists[listIndex].memos,
-        this.lists[listIndex].inputValue,
-      ]
+      this.lists[listIndex].memos.push(this.lists[listIndex].inputValue)
       localStorage.lists = JSON.stringify(this.lists)
       this.lists[listIndex].inputValue = ""
     },
