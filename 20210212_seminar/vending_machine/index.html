@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>自動販売機</title>
+  </head>
+  <body>
+    <div id="app">
+      <h1>自動販売機</h1>
+      <ul>
+        <li v-for="(drink, index) in drinks.drinks">
+          {{ drink }}
+          <button v-on:click="buyDrink(index)">
+            {{ drinks.prices[index] }}円
+          </button>
+        </li>
+      </ul>
+      <div>
+        <input type="text" v-model="inputValue" />
+        <button v-on:click="putMoney">入金する</button>
+      </div>
+      <p>投入金額：{{ totalMoney }}円</p>
+      <ul>
+        <li v-for="(list, index) in lists">
+          {{ list }}
+          <!-- <button v-on:click="deleteMemo(index)">削除</button> -->
+        </li>
+      </ul>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>
