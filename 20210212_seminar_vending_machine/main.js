@@ -47,7 +47,7 @@ new Vue({
 
   // Vue インスタンスが作られるときに実行される関数 created
   created: function () {
-    this.totalMoney = localStorage.totalMoney || 0
+    this.totalMoney = Number(localStorage.totalMoney) || 0
     this.lists = JSON.parse(localStorage.lists) || []
   },
 })
