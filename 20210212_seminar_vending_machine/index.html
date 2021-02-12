@@ -21,10 +21,16 @@
         <button v-on:click="putMoney">入金する</button>
       </div>
       <p>投入金額：{{ totalMoney }}円</p>
+      <button v-on:click="clearTotalMoney">投入金額をクリア</button>
       <ul>
-        <li v-for="(list, index) in lists">{{ list }}</li>
+        <li v-for="(list, index) in lists">
+          {{ list }}
+          <button v-on:click="deleteList(index)">削除</button>
+        </li>
       </ul>
     </div>
+
+    <!-- Vue が先、main.js があと！ -->
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="main.js"></script>
   </body>
